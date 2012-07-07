@@ -22,6 +22,17 @@
 ### 알려진 문제점
 <!---### Known issues-->
 
+#### VIM
+
+빔은 원본 파일을 바꾸기전에 임시파일을 만듭니다. 라이브 리로드의 문제를 방지하기 위해, 쓰기 모드를 바꿔주세요:
+<!--VIM creates a temporary file before replacing the real file. To prevent problems with Live Reload, change the write mode with:-->
+
+    :set nowritebackup
+
+
+<!---#### Too many files-->
+#### 너무 많은 파일
+
 라이브 리로드는 노드의 `fs.watch()`API 에 포함되어있습니다. 이는 운영체재마다 다르게 작동합니다. 예를들어 리눅스에선  `client` 디랙토리에 파일이 많을 경우 `EMFILE`에러가 나옵니다. 이런 경우 다음 파일을 여시고:
 <!--Live Reload is built on Node's `fs.watch()` API which works differently on each operating system. For example, on Linux you'll get an `EMFILE` error if you have many files in your `client` directory. Change this limit with:-->
 
