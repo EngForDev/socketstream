@@ -1,3 +1,28 @@
+0.3.0 / 2012-XX-XX
+==================
+
+Not yet released. These are the changes so far...
+
+
+##### Improvements for Production Hosting
+
+* IMPORTANT: `ss.client.packAssets()` now tries to use existing pre-packed assets if present
+* If no assets are found, or you pass the env var `SS_PACK=1`, assets will always be (re)packed
+* Static assets now have a cache expiry header of 30 days by default. Configurable with `ss.client.set({static: {maxAge: newValue}})` as before
+* NEW: CDN paths can now be functions. E.g. `ss.client.packAssets({cdn: {js: function(file){ return "http://mycdn.com" + file.path; } }})` 
+
+
+##### Other
+
+* Updated to work on Node 0.8 [Discuss any issues here](https://github.com/socketstream/socketstream/issues/250)
+* Live Reload now uses `chokidar` for better performance on Windows and when creating new files. Big thanks to CyberWalrus
+* Updated many package dependencies
+* Added documentation in Korean (thanks EngForDev)
+* Enable proper handling of question marks and params when routing HTTP requests (thanks matthiasg)
+* In newly generated projects `ss.define.client()` now lists client libs explicitly to avoid confusion over load order
+* Updated bundled jQuery to 1.7.2
+
+
 0.3 RC2 / 2012-05-04
 ====================
 
@@ -10,7 +35,6 @@
 * Minor refactoring
 * Updated README with video link
 
-Note: SocketStream 0.3.0 will be officially launched later in May, along with example apps, screencasts, more documentation and improvements to [www.socketstream.org](http://www.socketstream.org). Read announcement [here](https://groups.google.com/forum/?fromgroups#!topic/socketstream/Y6OIOrJRX7w).
 
 
 0.3 RC1 / 2012-04-22
@@ -35,8 +59,6 @@ Note: SocketStream 0.3.0 will be officially launched later in May, along with ex
 * Changed a lot of `exports.init` to `module.exports` in line with Node best practice
 * Removed code to check for previous versions of 0.3
 * Updated `package.json` with names of significant/regular contributors. Thanks guys!
-
-Note: SocketStream 0.3.0 will be officially launched in May, along with example apps, screencasts, more documentation and improvements to [www.socketstream.org](http://www.socketstream.org). Read announcement [here](https://groups.google.com/forum/?fromgroups#!topic/socketstream/Y6OIOrJRX7w).
 
 
 
