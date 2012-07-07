@@ -102,5 +102,4 @@ RPC Responder는 JSON을 이용하여 쌍방향으로 메세지들을 직렬화 
 <!--Thus the actual message sent over the wire is a string which looks like this:-->
 그래서 실제로 보내는 내용은 이런식의 문자열입니다:
 
-
     {id: 1, m: 'method.to.call', p: [param1, param2, ...]}
