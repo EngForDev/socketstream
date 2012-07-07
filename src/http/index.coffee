@@ -5,6 +5,7 @@
 
 fs = require('fs')
 pathlib = require('path')
+existslib = process.version.split('.')[1] == '6' && require('path') || require('fs')
 connect = require('connect')
 
 fileUtils = require('../utils/file')
@@ -15,7 +16,7 @@ staticFiles = []
 
 # User-configurable settings with sensible defaults
 settings = 
-  static: {maxAge: 30 * 1000}  # cache static assets in the browser for 30 seconds
+  static: {maxAge: 30 * 24 * 60 * 60 * 1000}  # cache static assets in the browser for 30 days
 
 # Create new Connect app instance which can be accessed from your app.js file with ss.http.middleware
 app = connect()
@@ -104,7 +105,7 @@ transformURL = (url) ->
 
 
 loadStaticDirs = (path) ->
-  if pathlib.existsSync(path)
+  if existslib.existsSync(path)
 
     # Get a list of top-level static directories (used by the router)
     staticDirs = fs.readdirSync(path)

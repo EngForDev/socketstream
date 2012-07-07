@@ -8,6 +8,7 @@ require('colors')
 
 fs = require('fs')
 pathlib = require('path')
+existslib = process.version.split('.')[1] == '6' && require('path') || require('fs')
 cleanCSS = require('clean-css')
 
 system = require('./system')
@@ -56,7 +57,7 @@ module.exports = (ss, client, options) ->
   # Prepare folder
   mkdir(containerDir)
   mkdir(clientDir)
-  deleteOldFiles(clientDir) unless options.packAssets && options.packAssets.keepOldFiles
+  deleteOldFiles(clientDir) unless options.packedAssets && options.packedAssets.keepOldFiles
 
   # Output CSS
   packAssetSet 'css', client.paths.css, options.dirs.css, (files) ->
@@ -82,7 +83,7 @@ formatKb = (size) ->
   "#{Math.round((size / 1024) * 1000) / 1000} KB"
 
 mkdir = (dir) ->
-  fs.mkdirSync(dir) unless pathlib.existsSync(dir)
+  fs.mkdirSync(dir) unless existslib.existsSync(dir)
 
 deleteOldFiles = (clientDir) ->
   numFilesDeleted = 0

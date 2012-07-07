@@ -10,9 +10,7 @@ Twitter: [@socketstream](http://twitter.com/#!/socketstream)
 Google Group: http://groups.google.com/group/socketstream  
 IRC channel: [#socketstream](http://webchat.freenode.net/?channels=socketstream) on freenode
 
-Take a tour of all the new features at http://www.socketstream.org/tour
-
-Note: I will be talking about SocketStream 0.3 at [LNUG](http://lnug.org) on Wednesday 23rd May.
+Take a tour of all the new features at http://www.socketstream.org/tour and watch the [introductory video](http://vimeo.com/43027679) (recorded May 2012).
 
 
 ### Introduction
@@ -43,7 +41,7 @@ While it is still early days, our end goal is to ensure SocketStream can be used
 
 SocketStream is in full-time development, rapidly progressing thanks to frequent contributions from a [growing community](http://groups.google.com/group/socketstream) of developers.
 
-SocketStream 0.3.0 will be officially launched in May, along with example apps, screencasts, more documentation and improvements to [www.socketstream.org](http://www.socketstream.org). Read announcement [here](https://groups.google.com/forum/?fromgroups#!topic/socketstream/Y6OIOrJRX7w).
+SocketStream 0.3.0 will be launched shortly, along with example apps, screencasts, more documentation and improvements to [www.socketstream.org](http://www.socketstream.org).
 
 
 ## Features
@@ -97,9 +95,9 @@ All this means no more connection latency, HTTP header overhead, polling, or clu
 
 ### Getting Started
 
-Ready to give it a whirl? Install [Node 0.6.X](http://nodejs.org/#download) then install SocketStream from NPM:
+Ready to give it a whirl? Install [Node 0.8.X](http://nodejs.org/#download) and checkout the latest code from master:
 
-    [sudo] npm install -g socketstream
+    [sudo] npm install git://github.com/socketstream/socketstream.git
 
 To generate a new empty SocketStream project type:
 
@@ -110,7 +108,8 @@ __Tip: Type `socketstream -h` to view all available options__
 Install the bundled (optional) dependencies:
 
     cd <name_of_your_project>
-    npm install
+    [sudo] npm link socketstream
+    [sudo] npm install
 
 To start your app simply type:
 
@@ -188,7 +187,7 @@ More examples coming soon!
 
 Please start with http://www.socketstream.org/tour which walks you through the key features and shows you the code.
 
-Documentation is constantly expanding and can be found in `/doc/guide/en`.
+Documentation is constantly expanding and currently available in [English](https://github.com/socketstream/socketstream/tree/master/doc/guide/en) and [Korean](https://github.com/socketstream/socketstream/tree/master/doc/guide/ko).
 
 ##### Developing (Client-side)
 
@@ -295,7 +294,9 @@ Back end scaling has yet to be properly documented, but we're keen to continue l
 
 ### Videos
 
-**NEW** [Watch the introductory presentation](http://2011.krtconf.com/videos/owen_barnes) I gave at [KrtConf](http://krtconf.com) last November. Although the first half of the video refers to the previous version (SocketStream 0.2), all the upcoming features I speak about are now available in SocketStream 0.3.
+
+* November 2011 - [Presentation to KrtConf.com](http://2011.krtconf.com/videos/owen_barnes), Portland
+* May 2012 - [Presentation to LNUG.org](http://vimeo.com/43027679), London (most recent)
 
 
 ### Developing on the SocketStream core
